@@ -1,9 +1,7 @@
 // compile using gcc MineSweeper.c -lncurses -o minesweeper
 /*
- * TODO: allow the user to specify a size and number of mines: will look at pointers and 2D arrays
  * TODO: add in error checking (for example make sure the user types in two numbers for a point
  * TODO: Make code neater
- * TODO: change code to be implemented using pointers
  */
 #include <stdio.h>
 #include <stdlib.h>
