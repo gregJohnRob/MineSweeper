@@ -3,7 +3,6 @@
  * TODO: allow the user to specify a size and number of mines: will look at pointers and 2D arrays
  * TODO: add in error checking (for example make sure the user types in two numbers for a point
  * TODO: Make code neater
- * TODO: put a grid around the mine so it is easier for people to work out each point
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,7 +50,21 @@ void displayForTesting(){
   int x;
   int y;
   int largestValue = 0;
+  printw("      ");
+  for (x = 0; x < xDim; x++) {
+    if (x < 10) {
+      printw("00%d ", x);
+    } else {
+      printw("0%d ", x);
+    }
+  }
+  printw("\n \n");
   for (y = 0; y < yDim; y++) {
+    if (y < 10) {
+      printw("00%d   ", y);
+    } else {
+      printw("0%d   ", y);
+    }
     for (x = 0; x < xDim; x++) {
       if (mine[x][y] > largestValue && mine[x][y] != mineValue){
         largestValue = mine[x][y];
@@ -85,7 +98,21 @@ void displayLastMove(int x, char point[]){
 void display(){
   int x;
   int y;
+  printw("      ");
+  for (x = 0; x < xDim; x++) {
+    if (x < 10) {
+      printw("00%d ", x);
+    } else {
+      printw("0%d ", x);
+    }
+  }
+  printw("\n \n");
   for (y = 0; y < yDim; y++) {
+    if (y < 10) {
+      printw("00%d   ", y);
+    } else {
+      printw("0%d   ", y);
+    }
     for (x = 0; x < xDim; x++) {
       if (displayMine[x][y] == 0){
         printw("??? ");
