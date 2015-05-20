@@ -42,3 +42,42 @@ void alternativePopulate(){
     }
   }
 }
+
+
+// the display function that can be used if you want to test out different things
+void displayForTesting(Position** mineField,
+              int xDimension, int yDimension, int mineValue){
+  int x;
+  int y;
+  int largestValue = 0;
+  printw("      ");
+  for (x = 0; x < xDimension; x++) {
+    if (x < 10) {
+      printw("00%d ", x);
+    } else {
+      printw("0%d ", x);
+    }
+  }
+  printw("\n\n");
+  for (y = 0; y < yDimension; y++) {
+    if (y < 10) {
+      printw("00%d   ", y);
+    } else {
+      printw("0%d   ", y);
+    }
+    for (x = 0; x < xDimension; x++) {
+      if ((mineField[x] + y)->value > largestValue && (mineField[x] + y)->value != mineValue){
+        largestValue = (mineField[x] + y)->value;
+      }
+      if ((mineField[x] + y)->value < 10) {
+        printw("00%d ", (mineField[x] + y)->value);
+      } else if ((mineField[x] + y)->value < 100){
+        printw("0%d ", (mineField[x] + y)->value);
+      } else {
+        printw("%d ", (mineField[x] + y)->value);
+      }
+    }
+    printw("\n");
+  }
+  printw("the largest grouping is: %d\n", largestValue);
+}
