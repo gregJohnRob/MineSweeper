@@ -1,4 +1,3 @@
-// compile using gcc MineSweeper.c -lncurses -o minesweeper
 /*
  * TODO: add in error checking (for example make sure the user types in two numbers for a point
  * TODO: Make code neater
